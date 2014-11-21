@@ -29,7 +29,7 @@ void display(void){
         glVertex3f (0.25, 0.75, 0.0);
     glEnd();
     
-    glFlush();
+    glFlush(); 
     
 }
 
