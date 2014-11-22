@@ -5,15 +5,18 @@
 //  Created by John Petersson on 2014-11-21.
 //  Copyright (c) 2014 John Petersson. All rights reserved.
 //
-//#include <stdlib.h>
+#include <stdlib.h>
 #include <iostream>
 
 #ifdef __APPLE__
+#include <GL/glew.h>
 #include <GLUT/glut.h>
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
+
 //#include <OpenGL/glfw.h>
 #else
+#include <GL/glew.h>
 #include <GL/glut.h>
 #include <GL/glu.h>
 #include <GL/gl.h>
@@ -54,7 +57,11 @@ void spinDisplay(void)
     glutPostRedisplay();
 }
 
-void init() {
+void initGL() {
+    
+  //  startupGLDiagnostics();
+   // setupGLDebugMessages();
+    
     glClearColor(0.0,0.0,0.0,0.0);
     
     glMatrixMode(GL_PROJECTION);
@@ -95,11 +102,20 @@ int main(int argc, char** argv) {
     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize (500, 500);
     glutInitWindowPosition (400, 100);
+   
+//    glutInitContextVersion(3,0);
+ //   glutInitContextFlags(GLUT_DEBUG);
+    
     glutCreateWindow ("It's a gwaan be space goddammit");
-    init ();
+    
+    
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
     glutMouseFunc(mouse);
+    initGL();
     glutMainLoop();
+    
     return 0;   /* ISO C requires main to return int. */
 }
+
+//$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
