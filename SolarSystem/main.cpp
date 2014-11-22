@@ -115,7 +115,10 @@ void handleSpecialKeys(int key, int /*x*/, int /*y*/)
             printf("Right arrow\n");
             break;
         case GLUT_KEY_UP:
+            printf("Up arrow\n");
+            break;
         case GLUT_KEY_DOWN:
+            printf("Down arrow\n");
             break;
     }
 }
