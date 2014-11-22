@@ -59,9 +59,6 @@ void spinDisplay(void)
 
 void initGL() {
     
-  //  startupGLDiagnostics();
-   // setupGLDebugMessages();
-    
     glClearColor(0.0,0.0,0.0,0.0);
     
     glMatrixMode(GL_PROJECTION);
@@ -102,9 +99,6 @@ int main(int argc, char** argv) {
     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize (500, 500);
     glutInitWindowPosition (400, 100);
-   
-//    glutInitContextVersion(3,0);
- //   glutInitContextFlags(GLUT_DEBUG);
     
     glutCreateWindow ("It's a gwaan be space goddammit");
     
