@@ -27,7 +27,7 @@ void display(void){
    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glColor3f(0.7, 0.1, 0.1);
     
-    //glEnable(GL_DEPTH_TEST);							// enable Z-buffering
+    glEnable(GL_DEPTH_TEST);							// enable Z-buffering
     
     int w = glutGet((GLenum)GLUT_WINDOW_WIDTH);
     int h = glutGet((GLenum)GLUT_WINDOW_HEIGHT);
@@ -53,6 +53,7 @@ void display(void){
     
     glutSwapBuffers();
     
+
     //glFlush();
 }
 
@@ -129,9 +130,12 @@ void handleSpecialKeys(int key, int /*x*/, int /*y*/)
 
 void reshape(int w, int h) {
     glViewport (0, 0, (GLsizei) w, (GLsizei) h);
+    
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(-50.0, 50.0, -50.0, 50.0, -1.0, 1.0);
+    //glOrtho(-50.0, 50.0, -50.0, 50.0, -1.0, 1.0);
+    glOrtho(- w/2, (GLdouble) w/2, -h/2, (GLdouble) h/2, -1.0, 1.0); // Center at (0.0, 0.0) and scale = window size
+    
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
