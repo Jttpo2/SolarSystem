@@ -216,8 +216,12 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/include,
+					/opt/x11/include,
 				);
-				LIBRARY_SEARCH_PATHS = /usr/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/lib,
+					/opt/x11/include,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /usr/include;
@@ -233,8 +237,12 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					/usr/include,
+					/opt/x11/include,
 				);
-				LIBRARY_SEARCH_PATHS = /usr/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/lib,
+					/opt/x11/include,
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = /usr/include;

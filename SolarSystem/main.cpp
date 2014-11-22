@@ -10,14 +10,16 @@
 
 #ifdef __APPLE__
 #include <GL/glew.h>
-#include <GLUT/glut.h>
+#include <GL/freeglut.h>
+//#include <GLUT/glut.h>
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 
 //#include <OpenGL/glfw.h>
 #else
 #include <GL/glew.h>
-#include <GL/glut.h>
+#include <GL/freeglut.h>
+//#include <GL/glut.h>
 #include <GL/glu.h>
 #include <GL/gl.h>
 #endif
@@ -122,5 +124,3 @@ int main(int argc, char** argv) {
     
     return 0;   /* ISO C requires main to return int. */
 }
-
-//$(inherited) /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
