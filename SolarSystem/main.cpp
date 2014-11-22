@@ -10,7 +10,6 @@
 
 #ifdef __APPLE__
 #include <GL/freeglut.h>
-//#include <GLUT/glut.h>
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 
@@ -18,7 +17,6 @@
 
 #else
 #include <GL/freeglut.h>
-//#include <GL/glut.h>
 #include <GL/glu.h>
 #include <GL/gl.h>
 #endif
@@ -50,8 +48,6 @@ void display(void){
     glutSolidSphere(30, 100, 10);
     
     glutSwapBuffers();
-    
-    
     
     //glFlush();
 }
