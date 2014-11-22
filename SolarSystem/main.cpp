@@ -13,6 +13,7 @@
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
 //#include <OpenGL/glfw.h>
+
 #else
 #include <GL/glut.h>
 #include <GL/glu.h>
@@ -54,7 +55,7 @@ void spinDisplay(void)
     glutPostRedisplay();
 }
 
-void init() {
+void initGL() {
     glClearColor(0.0,0.0,0.0,0.0);
     
     glMatrixMode(GL_PROJECTION);
@@ -96,10 +97,13 @@ int main(int argc, char** argv) {
     glutInitWindowSize (500, 500);
     glutInitWindowPosition (400, 100);
     glutCreateWindow ("It's a gwaan be space goddammit");
-    init ();
+    
+    initGL ();
+    
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
     glutMouseFunc(mouse);
+    
     glutMainLoop();
     return 0;   /* ISO C requires main to return int. */
 }
