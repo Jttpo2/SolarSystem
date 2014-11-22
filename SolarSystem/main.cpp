@@ -9,7 +9,6 @@
 #include <iostream>
 
 #ifdef __APPLE__
-#include <GL/glew.h>
 #include <GL/freeglut.h>
 //#include <GLUT/glut.h>
 #include <OpenGL/gl.h>
@@ -18,7 +17,6 @@
 //#include <OpenGL/glfw.h>
 
 #else
-#include <GL/glew.h>
 #include <GL/freeglut.h>
 //#include <GL/glut.h>
 #include <GL/glu.h>
@@ -67,6 +65,7 @@ void spinDisplay(void)
 }
 
 void initGL() {
+    
     glClearColor(0.0,0.0,0.0,0.0);
     
     glMatrixMode(GL_PROJECTION);
