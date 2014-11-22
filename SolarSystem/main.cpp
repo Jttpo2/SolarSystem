@@ -24,10 +24,14 @@
 static GLfloat spin = 0.0;
 
 void display(void){
-   glClear(GL_COLOR_BUFFER_BIT);
-    
-
+   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glColor3f(0.7, 0.1, 0.1);
+    
+    //glEnable(GL_DEPTH_TEST);							// enable Z-buffering
+    
+    int w = glutGet((GLenum)GLUT_WINDOW_WIDTH);
+    int h = glutGet((GLenum)GLUT_WINDOW_HEIGHT);
+    glViewport(0, 0, w, h);								// Set viewport
     
     glBegin(GL_POLYGON);
         glVertex3f (-10.25, -10.25, 1.0);
