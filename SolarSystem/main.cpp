@@ -5,17 +5,22 @@
 //  Created by John Petersson on 2014-11-21.
 //  Copyright (c) 2014 John Petersson. All rights reserved.
 //
-//#include <stdlib.h>
+#include <stdlib.h>
 #include <iostream>
 
 #ifdef __APPLE__
-#include <GLUT/glut.h>
+#include <GL/glew.h>
+#include <GL/freeglut.h>
+//#include <GLUT/glut.h>
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
+
 //#include <OpenGL/glfw.h>
 
 #else
-#include <GL/glut.h>
+#include <GL/glew.h>
+#include <GL/freeglut.h>
+//#include <GL/glut.h>
 #include <GL/glu.h>
 #include <GL/gl.h>
 #endif
@@ -24,14 +29,19 @@ static GLfloat spin = 0.0;
 
 void display(void){
    glClear(GL_COLOR_BUFFER_BIT);
+    
+
     glColor3f(0.7, 0.1, 0.1);
     
     glBegin(GL_POLYGON);
-        glVertex3f (-10.25, -10.25, 0.0);
-        glVertex3f (10.75, -10.25, 0.0);
-        glVertex3f (10.75, 10.75, 0.0);
-        glVertex3f (-10.25, 10.75, 0.0);
+        glVertex3f (-10.25, -10.25, 1.0);
+        glVertex3f (10.75, -10.25, -2.0);
+        glVertex3f (10.75, 10.75, -2.0);
+        glVertex3f (-10.25, 10.75, 1.0);
     glEnd();
+    
+    glColor3f(0.7, 0.1, 1);
+    glutWireSphere(10, 100, 6);
     
     glPushMatrix();
     glRotatef(spin, 0.0, 0.0, 1.0);
@@ -40,6 +50,7 @@ void display(void){
     glPopMatrix();
     
     glutSolidSphere(30, 100, 10);
+    
     glutSwapBuffers();
     
     
@@ -71,7 +82,11 @@ void mouse(int button, int state, int x, int y) {
             if (state == GLUT_DOWN) {
                 glutIdleFunc(spinDisplay);
                 break;
+            } else {
+                glutIdleFunc(NULL);
+                break;
             }
+
             case GLUT_RIGHT_BUTTON:
                 if (state == GLUT_DOWN) {
                     glutIdleFunc(NULL);
@@ -93,9 +108,10 @@ void reshape(int w, int h) {
 int main(int argc, char** argv) {
     
     glutInit(&argc, argv);
-    glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+    glutInitDisplayMode (GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowSize (500, 500);
     glutInitWindowPosition (400, 100);
+    
     glutCreateWindow ("It's a gwaan be space goddammit");
     
     initGL ();
@@ -105,5 +121,6 @@ int main(int argc, char** argv) {
     glutMouseFunc(mouse);
     
     glutMainLoop();
+    
     return 0;   /* ISO C requires main to return int. */
 }
