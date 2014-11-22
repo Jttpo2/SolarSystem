@@ -91,6 +91,35 @@ void mouse(int button, int state, int x, int y) {
     }
 }
 
+void handleKeys(unsigned char key, int /*x*/, int /*y*/)
+{
+    switch( key )
+    {
+            // Key 27 => Escape.
+        case 27:
+        {
+            exit( 0 );
+            break;
+        }
+    }
+}
+
+void handleSpecialKeys(int key, int /*x*/, int /*y*/)
+{
+    switch(key)
+    {
+        case GLUT_KEY_LEFT:
+            printf("Left arrow\n");
+            break;
+        case GLUT_KEY_RIGHT:
+            printf("Right arrow\n");
+            break;
+        case GLUT_KEY_UP:
+        case GLUT_KEY_DOWN:
+            break;
+    }
+}
+
 void reshape(int w, int h) {
     glViewport (0, 0, (GLsizei) w, (GLsizei) h);
     glMatrixMode(GL_PROJECTION);
@@ -113,7 +142,10 @@ int main(int argc, char** argv) {
     
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
-    glutMouseFunc(mouse);
+    glutKeyboardFunc(handleKeys);   // standard key is pressed/released
+    glutSpecialFunc(handleSpecialKeys); // "special" key is pressed/released
+    glutMouseFunc(mouse);           // mouse button pressed/released
+    //glutMotionFunc(motion);         // mouse moved *while* any button is pressed
     
     glutMainLoop();
     
