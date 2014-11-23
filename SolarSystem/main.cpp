@@ -9,9 +9,12 @@
 #include <iostream>
 
 #ifdef __APPLE__
+#include <GL/glew.h>
 #include <GL/freeglut.h>
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
+
+#include <glutil.h>
 
 //#include <OpenGL/glfw.h>
 
@@ -20,6 +23,7 @@
 #include <GL/glu.h>
 #include <GL/gl.h>
 #endif
+
 
 static GLfloat spin = 0.0;
 

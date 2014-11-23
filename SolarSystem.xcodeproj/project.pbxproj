@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82AFD4A71A2227B6002940D5 /* libGLEW.1.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AFD4A61A2227B6002940D5 /* libGLEW.1.11.0.dylib */; };
 		82D0678A1A1FB5570071351A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82D067891A1FB5570071351A /* main.cpp */; };
 		82D067911A1FB8060071351A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D067901A1FB8060071351A /* OpenGL.framework */; };
-		82D067931A1FBD310071351A /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D067921A1FBD310071351A /* GLUT.framework */; };
 		82DC69621A21DD880083CDA4 /* glutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82DC69601A21DD880083CDA4 /* glutil.cpp */; };
 		82DC699D1A21DE410083CDA4 /* float2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82DC699B1A21DE410083CDA4 /* float2.cpp */; };
 		82DC69A41A21DE710083CDA4 /* float3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82DC69A01A21DE710083CDA4 /* float3.cpp */; };
@@ -29,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		82AFD4A41A2224A1002940D5 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../usr/lib/libGLEW.a; sourceTree = "<group>"; };
+		82AFD4A61A2227B6002940D5 /* libGLEW.1.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.11.0.dylib; path = ../../../../../usr/lib/libGLEW.1.11.0.dylib; sourceTree = "<group>"; };
 		82D067861A1FB5570071351A /* SolarSystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SolarSystem; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D067891A1FB5570071351A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		82D067901A1FB8060071351A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -59,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82D067931A1FBD310071351A /* GLUT.framework in Frameworks */,
+				82AFD4A71A2227B6002940D5 /* libGLEW.1.11.0.dylib in Frameworks */,
 				82D067911A1FB8060071351A /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +72,8 @@
 		82D0677D1A1FB5560071351A = {
 			isa = PBXGroup;
 			children = (
+				82AFD4A61A2227B6002940D5 /* libGLEW.1.11.0.dylib */,
+				82AFD4A41A2224A1002940D5 /* libGLEW.a */,
 				82D067921A1FBD310071351A /* GLUT.framework */,
 				82D067901A1FB8060071351A /* OpenGL.framework */,
 				82D067881A1FB5570071351A /* SolarSystem */,
@@ -268,7 +272,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = /usr/lib;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -280,7 +284,10 @@
 					/opt/x11/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_CFLAGS = "-lGLEW";
+				OTHER_LDFLAGS = "-lGLEW";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = /usr/include;
 			};
 			name = Debug;
@@ -292,7 +299,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = /usr/lib;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -304,7 +311,10 @@
 					/opt/x11/include,
 				);
 				MACOSX_DEPLOYMENT_TARGET = "";
+				OTHER_CFLAGS = "-lGLEW";
+				OTHER_LDFLAGS = "-lGLEW";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = /usr/include;
 			};
 			name = Release;
