@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		82AFD4A71A2227B6002940D5 /* libGLEW.1.11.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AFD4A61A2227B6002940D5 /* libGLEW.1.11.0.dylib */; };
+		82AFD4A91A222D51002940D5 /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = 82AFD4A81A222D51002940D5 /* glew.c */; };
 		82D0678A1A1FB5570071351A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82D067891A1FB5570071351A /* main.cpp */; };
 		82D067911A1FB8060071351A /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82D067901A1FB8060071351A /* OpenGL.framework */; };
 		82DC69621A21DD880083CDA4 /* glutil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82DC69601A21DD880083CDA4 /* glutil.cpp */; };
@@ -29,12 +29,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		82AFD4A41A2224A1002940D5 /* libGLEW.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGLEW.a; path = ../../../../../usr/lib/libGLEW.a; sourceTree = "<group>"; };
-		82AFD4A61A2227B6002940D5 /* libGLEW.1.11.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.1.11.0.dylib; path = ../../../../../usr/lib/libGLEW.1.11.0.dylib; sourceTree = "<group>"; };
+		82AFD4A81A222D51002940D5 /* glew.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glew.c; sourceTree = "<group>"; };
+		82AFD4AA1A222DE3002940D5 /* glew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glew.h; sourceTree = "<group>"; };
+		82AFD4AB1A222E78002940D5 /* inverse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = inverse.h; sourceTree = "<group>"; };
 		82D067861A1FB5570071351A /* SolarSystem */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SolarSystem; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D067891A1FB5570071351A /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		82D067901A1FB8060071351A /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		82D067921A1FBD310071351A /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		82DC69601A21DD880083CDA4 /* glutil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = glutil.cpp; sourceTree = "<group>"; };
 		82DC69611A21DD880083CDA4 /* glutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glutil.h; sourceTree = "<group>"; };
 		82DC69831A21DDFD0083CDA4 /* float4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = float4.cpp; sourceTree = "<group>"; };
@@ -61,7 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82AFD4A71A2227B6002940D5 /* libGLEW.1.11.0.dylib in Frameworks */,
 				82D067911A1FB8060071351A /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,9 +71,6 @@
 		82D0677D1A1FB5560071351A = {
 			isa = PBXGroup;
 			children = (
-				82AFD4A61A2227B6002940D5 /* libGLEW.1.11.0.dylib */,
-				82AFD4A41A2224A1002940D5 /* libGLEW.a */,
-				82D067921A1FBD310071351A /* GLUT.framework */,
 				82D067901A1FB8060071351A /* OpenGL.framework */,
 				82D067881A1FB5570071351A /* SolarSystem */,
 				82D067871A1FB5570071351A /* Products */,
@@ -92,6 +88,8 @@
 		82D067881A1FB5570071351A /* SolarSystem */ = {
 			isa = PBXGroup;
 			children = (
+				82AFD4AA1A222DE3002940D5 /* glew.h */,
+				82AFD4A81A222D51002940D5 /* glew.c */,
 				82DC69631A21DDFD0083CDA4 /* linmath */,
 				82DC69601A21DD880083CDA4 /* glutil.cpp */,
 				82DC69611A21DD880083CDA4 /* glutil.h */,
@@ -106,6 +104,7 @@
 				82DC69A01A21DE710083CDA4 /* float3.cpp */,
 				82DC69A81A21DE9A0083CDA4 /* Common.h */,
 				82DC69A61A21DE870083CDA4 /* SmallVector3.h */,
+				82AFD4AB1A222E78002940D5 /* inverse.h */,
 				82DC69A71A21DE870083CDA4 /* SmallVector3.inl */,
 				82DC69A11A21DE710083CDA4 /* float3.h */,
 				82DC69A21A21DE710083CDA4 /* float3x3.cpp */,
@@ -182,6 +181,7 @@
 			files = (
 				82DC69A41A21DE710083CDA4 /* float3.cpp in Sources */,
 				82DC69621A21DD880083CDA4 /* glutil.cpp in Sources */,
+				82AFD4A91A222D51002940D5 /* glew.c in Sources */,
 				82DC699D1A21DE410083CDA4 /* float2.cpp in Sources */,
 				82DC69A51A21DE710083CDA4 /* float3x3.cpp in Sources */,
 				82D0678A1A1FB5570071351A /* main.cpp in Sources */,

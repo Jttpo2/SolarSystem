@@ -11,7 +11,7 @@
 #include <string>
 #include <cassert>
 
-#include <GL/glew.h>
+#include <glew.h>
 
 // Sometimes it exists, sometimes not...
 #ifndef M_PI

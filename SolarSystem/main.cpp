@@ -9,7 +9,7 @@
 #include <iostream>
 
 #ifdef __APPLE__
-#include <GL/glew.h>
+#include <glew.h>
 #include <GL/freeglut.h>
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
